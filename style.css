@@ -1,0 +1,500 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,600;0,700;0,800;0,900;1,500;1,600;1,700;1,800;1,900&family=Syne:wght@400;500;600;700;800&display=swap');
+
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-family: 'Syne', sans-serif;
+    font-size: 62,5%;
+
+    --color-black: #000000;
+    --color-white: #FFFFFF;
+    --color-lavender: #DFC7FF;
+    --color-yellow: #FFF384;
+    --color-blue: #3566FD;
+}
+
+body {
+    
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-areas: 
+        'side nav'
+        'side main'
+        'side footer';
+    grid-template-columns: 20px 1fr;
+    grid-template-rows: 7vh 86vh 7vh;
+}
+
+.body-index {
+    background-color: var(--color-yellow);
+}
+
+.body-work {
+    background-color: var(--color-white);
+}
+
+.body-contact {
+    background-color: var(--color-lavender);
+}
+
+/* LINKS-STYLES */
+
+a {
+    text-decoration: 0.1px underline;
+    color: black;
+}
+
+a:hover {
+    color: blue;
+}
+
+#active {
+    color: blue;
+}
+
+/* NAV-STYLES */
+
+nav {
+    grid-area: nav;
+    padding-left: 5rem;
+
+    grid-template-columns: 1fr 7fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: '. nav-links';
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.nav-links {
+    grid-area: nav-links;
+}
+
+nav a {
+    text-decoration: none;
+    padding: 0 1.5rem;
+    font-size: 1.2rem;
+    font-family: Helvetica, sans-serif;
+    font-family: 'Syne', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: black;
+}
+
+nav a:hover {
+    color: blue;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+}
+
+
+/* NAV-MOBIL-VERSION-STYLES */
+
+.side {
+    grid-area: side;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.selector {
+    display: flex;
+    flex-direction: column;
+    transition: 1s ease;
+}
+
+.side-nav {
+    width: 100%;
+    height: 100%;
+}
+
+.selector a {
+    transition: 0.3s ease;
+}
+
+.selector a.side-nav:hover {
+    background-color: var(--color-blue);
+}
+
+.selector a.nav-orange {
+    background-color: var(--color-yellow);
+} 
+
+.selector a.nav-white {
+    background-color: var(--color-white);
+} 
+
+.selector a.nav-lavender {
+    background-color: var(--color-lavender);
+} 
+
+
+/* MAIN-STYLES */
+main {
+    grid-area: main;
+    color: black;
+    font-family: 'Syne', sans-serif;
+    font-weight: lighter;
+    font-size: clamp(3rem, 4vw, 7rem);
+    padding: 3rem 5rem 3rem 7rem;
+}
+
+footer {
+    grid-area: footer;
+    padding-left: 5rem;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    background-color: none;
+}
+
+.footer i {
+    padding: 0 1.5rem;
+    font-size: 2rem;
+}
+
+.footer i:hover {
+    color: blue;
+}
+
+footer a {
+    text-decoration: none;
+    font-size: 2rem;
+    color: black;
+}
+
+
+/* ABOUT-STYLES & CONTACT-STYLES */
+
+.main-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 4fr 1fr;
+    grid-template-rows: 0.1fr 1fr;
+    grid-template-areas: 
+        '. . . .'
+        '. i t .';
+    gap: 2.5rem;
+}
+
+.grid-img {
+    grid-area: i;
+}
+
+.grid-textfield {
+    grid-area: t;
+}
+
+.portrait {
+    width: 23vw;
+}
+
+.portrait img {
+    width: 100%;
+}
+
+.section-textfield {
+    width: 40vw;
+}
+
+.small-p {
+    font-size: 2.5rem;
+}
+
+.xsmall-p {
+    font-size: 1.2rem;
+    line-height: 1.7rem;
+}
+
+
+/* WORK-STYLES */
+
+.work-grid {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 0.7rem;
+}
+
+.grid-item {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    overflow: hidden;
+}
+
+.grid-item > .hover-text {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    padding: 1rem;
+}
+
+.grid-item > .hover-text:hover {
+    opacity: 1;
+    cursor: pointer;
+    }
+
+.item-1:hover {
+    filter: blur(5px);
+}
+
+.grid-item > .hover-text:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+
+/* IMG HOVER EFFECT */
+
+.gridy {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    height: 50vh;
+    margin: auto 6.5rem;
+}
+
+.img-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.img-wrapper:hover {
+    cursor: pointer;
+}
+
+.img-wrapper > a img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: top left;
+}
+
+.img-wrapper a > .content {
+    position: absolute;
+    inset: 0;
+    font-family: 'Syne', sans-serif;
+    font-weight: bold;
+    color: blue;
+    font-size: 4rem;
+    padding: 4rem 2rem;
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.img-wrapper a > img,
+.img-wrapper a > .content {
+    transition: 200ms ease-in-out;
+}
+
+.img-wrapper a:hover > img.blur.zoom {
+    filter: blur(3px) grayscale(90%);
+    transform: scale(1.05);
+}
+
+.img-wrapper a > .content.fade {
+    opacity: 0;
+}
+
+.img-wrapper a:hover > .content.fade {
+    opacity: 1;
+}
+
+
+/* IMG-SLIDER WORK-PAGES */
+
+.slider-container {
+    margin-top: 2rem;
+    position: relative;
+    margin: 0 auto;
+    width: 50%;
+}
+
+.img-slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.img-slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#i1, #i2, #i3 {
+    display: none;
+}
+
+.pre, .nxt {
+    width: 50%;
+    height: 100%;
+    z-index: 100;
+}
+
+.pre {
+    position: absolute;
+    left: 0;
+    cursor: w-resize;
+}
+
+.nxt {
+    position: absolute;
+    right: 0;
+    cursor: e-resize;
+}
+
+.img-slider {
+    z-index: -1;
+}
+
+#i1:checked ~ #one,
+#i2:checked ~ #two,
+#i3:checked ~ #three {
+    z-index: 9;
+}
+
+
+/* WORK PAGES WORK-1 - WORK-4 */
+
+.main-work1 {
+    display: flex;
+    margin: 0 5.5rem;
+}
+
+.left-info {
+    display: flex;
+    flex-direction: column;
+    margin: 3rem 0 0 20.5rem;
+}
+
+.main-work1 i {
+    font-size: 2rem;
+    padding: 5rem;
+}
+
+.info-text {
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-style: italic;
+    line-height: 1.6rem;
+    padding: 5rem;
+}
+
+.left-info i:hover {
+    transform: rotate(-90deg);
+}
+
+.work-web {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.work-web img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+
+/* ANIMATION */
+
+.animation {
+    animation: textcolor 8s infinite;
+    background-image: linear-gradient(25deg, black, blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes textcolor {
+    0%      {background-image: linear-gradient(30deg, black, blue);}
+    15%     {background-image: linear-gradient(60deg, black, blue);}
+    30%     {background-image: linear-gradient(90deg, black, blue);}
+    45%     {background-image: linear-gradient(120deg, black, blue);}
+    60%     {background-image: linear-gradient(150deg, black, blue);}
+    75%     {background-image: linear-gradient(180deg, black, blue);}
+    90%     {background-image: linear-gradient(210deg, black, blue);}
+    100%    {background-image: linear-gradient(10deg, black, blue);}
+}
+
+
+@media screen and (max-width: 1400px) {
+    :root {
+        font-size: 62.5%;
+    }
+
+    body {
+        grid-template-rows: auto;
+    }
+
+    .main-grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .grid-textfield {
+        max-width: 70vw;
+    }
+
+    .grid-img img {
+        min-width: 50vw;
+    }
+
+    .side {
+        height: 100vh;
+    }
+
+    .gridy {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 80vw;
+        height: 100vh;
+        margin: 4rem 7rem;
+    }
+
+    .footer {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .footer i {
+        padding: 1.5rem 0;
+        font-size: 3rem;
+    }
+}
+    
+@media screen and (max-width: 800px) {
+    :root {
+        font-size: 60%;
+    }
+        
+    body {
+        width: 100vh;
+        height: 100vh;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .gridy {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 70vw;
+        height: 150vh;
+    }
+}
