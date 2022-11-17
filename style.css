@@ -433,7 +433,7 @@ footer a {
 
 @media screen and (max-width: 1400px) {
     :root {
-        font-size: 62.5%;
+        font-size: 95%;
     }
 
     body {
@@ -479,7 +479,7 @@ footer a {
     
 @media screen and (max-width: 800px) {
     :root {
-        font-size: 60%;
+        font-size: 85%;
     }
         
     body {
@@ -496,5 +496,11 @@ footer a {
         grid-template-columns: 1fr;
         width: 70vw;
         height: 150vh;
+    }
+}
+
+@media screen and (max-width: 605px) {
+    :root {
+        font-size: 60%;
     }
 }
